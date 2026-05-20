@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Julien Brochet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --dark:   #003938;
+      --beige:  #fdf3eb;
+      --text:   #1d2525;
+      --green:  #016f6c;
+      --orange: #ef8f6c;
+      --white:  #ffffff;
+      --f-display: 'Merriweather', Georgia, serif;
+      --f-body:    'Instrument Sans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--f-body);
+      color: var(--text);
+      background: var(--white);
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+
+    /* ── PRINT SETUP ─────────────────────────────── */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none; }
+    }
+
+    /* ── PRINT HINT ──────────────────────────────── */
+    .print-hint {
+      background: var(--green); color: white;
+      text-align: center; padding: 10px;
+      font-family: var(--f-body); font-size: 11px;
+      font-weight: 500; letter-spacing: .08em;
+    }
+    .print-hint button {
+      margin-left: 16px; padding: 4px 14px;
+      background: white; color: var(--green);
+      border: none; border-radius: 3px; cursor: pointer;
+      font-weight: 600; font-size: 11px;
+    }
+
+    /* ── PAGE WRAPPER ────────────────────────────── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ──────────────────────────────────── */
+    .header {
+      background: var(--dark);
+      padding: 28pt 28pt 22pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left {}
+
+    .header-eyebrow {
+      font-family: var(--f-body);
+      font-size: 6.5pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 6pt;
+    }
+
+    .header-name {
+      font-family: var(--f-display);
+      font-size: 28pt; font-weight: 900;
+      color: var(--white); line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .header-name .last { color: var(--beige); }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .header-contact {
+      font-size: 8pt; color: rgba(255,255,255,.75);
+      line-height: 1.7;
+    }
+
+    .header-contact a { color: rgba(255,255,255,.75); text-decoration: none; }
+
+    /* ── BODY ────────────────────────────────────── */
+    .body {
+      display: grid;
+      grid-template-columns: 58mm 1fr;
+      flex: 1;
+    }
+
+    /* ── LEFT SIDEBAR ────────────────────────────── */
+    .sidebar {
+      background: var(--beige);
+      padding: 20pt 16pt;
+    }
+
+    .sidebar-section { margin-bottom: 18pt; }
+
+    .sidebar-title {
+      font-family: var(--f-body);
+      font-size: 6pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 8pt;
+      padding-bottom: 4pt;
+      border-bottom: 1px solid rgba(239,143,108,.3);
+    }
+
+    .sidebar p {
+      font-size: 8.5pt; color: var(--text);
+      line-height: 1.6; margin-bottom: 3pt;
+    }
+
+    .sidebar p strong {
+      font-weight: 600; color: var(--dark);
+      display: block; margin-bottom: 1pt;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 3pt 7pt;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 2pt;
+      font-size: 7.5pt; font-weight: 500;
+      margin: 2pt 2pt 0 0;
+      line-height: 1.5;
+    }
+
+    .highlight-box {
+      background: var(--dark);
+      border-radius: 4pt;
+      padding: 10pt 12pt;
+      margin-bottom: 8pt;
+    }
+
+    .highlight-num {
+      font-family: var(--f-display);
+      font-size: 18pt; font-weight: 900;
+      color: var(--white); line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .highlight-label {
+      font-size: 7pt; color: var(--beige);
+      margin-top: 2pt; line-height: 1.4;
+    }
+
+    /* ── MAIN CONTENT ────────────────────────────── */
+    .main {
+      padding: 20pt 22pt 20pt 18pt;
+    }
+
+    .section { margin-bottom: 16pt; }
+
+    .section-title {
+      font-family: var(--f-body);
+      font-size: 6.5pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 6pt;
+      padding-bottom: 4pt;
+      border-bottom: 1.5px solid var(--orange);
+    }
+
+    .exp-item { margin-bottom: 11pt; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2pt;
+    }
+
+    .exp-role {
+      font-size: 9.5pt; font-weight: 600;
+      color: var(--dark);
+    }
+
+    .exp-dates {
+      font-family: var(--f-display);
+      font-size: 7.5pt; font-weight: 400;
+      font-style: italic; color: var(--orange);
+      white-space: nowrap; margin-left: 8pt;
+    }
+
+    .exp-company {
+      font-size: 8pt; color: var(--green);
+      font-weight: 500; margin-bottom: 4pt;
+    }
+
+    .exp-bullets { padding-left: 10pt; }
+
+    .exp-bullets li {
+      font-size: 8.5pt; color: rgba(29,37,37,.8);
+      line-height: 1.55; margin-bottom: 2pt;
+      list-style: none; position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '–';
+      position: absolute; left: -9pt;
+      color: var(--orange);
+    }
+
+    .kpi-tag {
+      display: inline-block; margin-top: 4pt;
+      padding: 2pt 7pt;
+      background: rgba(1,111,108,.1);
+      border: 1px solid rgba(1,111,108,.25);
+      border-radius: 10pt;
+      font-size: 7pt; font-weight: 600;
+      color: var(--green);
+    }
+
+    .profile-text {
+      font-size: 9pt; color: rgba(29,37,37,.8);
+      line-height: 1.7;
+    }
+    .profile-text strong { color: var(--dark); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="print-hint no-print">
+  Pour générer le PDF : Fichier → Imprimer → Enregistrer en PDF (A4, sans marges)
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-eyebrow">Chief Revenue Officer</div>
+      <div class="header-name">
+        Julien <span class="last">BROCHET</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-contact">
+        julien@brochet.gg<br>
+        +33 6 30 93 23 05<br>
+        Paris (92)<br>
+        linkedin.com/in/julien-brochet-75209291
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Key Achievements</div>
+        <div class="highlight-box">
+          <div class="highlight-num">+190%</div>
+          <div class="highlight-label">Network revenue growth in 2 years — EVA</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num">×3</div>
+          <div class="highlight-label">Headcount scaled — 10 to 30 — Prodigy</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num">20 yrs</div>
+          <div class="highlight-label">Building & scaling commercial organizations</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Core Skills</div>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Revenue Strategy</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Sales & Partnerships</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Team Building</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>KPIs & Playbooks</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Go-to-Market</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Building from 0 to 1</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Cross-functional Leadership</span>
+        <span class="skill-tag" style="display:inline-flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Scaling Organizations</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <p><strong>French</strong>Native</p>
+        <p><strong>English</strong>Fluent</p>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+        <p><strong>Master II — Project Management</strong>
+          IIM – Institut Léonard de Vinci<br>
+          Paris, 2002–2006
+        </p>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <div class="section">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          Revenue leader with <strong>20+ years building commercial organizations from scratch</strong>. Proven track record structuring sales, partnerships and customer success functions in high-growth environments — always starting from zero, always with measurable outcomes. Strong business acumen, hands-on execution, and genuine interest in sustainable finance and responsible investment.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Customer Success</div>
+            <div class="exp-dates">2023 – 2026</div>
+          </div>
+          <div class="exp-company">EVA – Esports Virtual Arenas · Paris</div>
+          <ul class="exp-bullets">
+            <li>Created and led the CSM department from scratch across a 70+ franchisee network</li>
+            <li>Designed KPI frameworks, performance playbooks and weekly review rhythms</li>
+            <li>Drove +190% network revenue growth in 2 years through structured performance management</li>
+            <li>Recruited and developed the CSM team; direct relationship with key franchisees</li>
+          </ul>
+          <span class="kpi-tag">+190% network revenue in 2 years</span>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Strategic Advisor</div>
+            <div class="exp-dates">2020 – 2023</div>
+          </div>
+          <div class="exp-company">Brochet Conseil (Independent) · Paris</div>
+          <ul class="exp-bullets">
+            <li>Advised growth-stage companies, investment funds and media groups</li>
+            <li>Focus: go-to-market strategy, partnerships, organizational structuring, performance improvement</li>
+            <li>Key clients: Red Bull, SportFive, Webedia Africa, France Esports, Freaks4U / Riot Games</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Strategy & Partnerships</div>
+            <div class="exp-dates">2021</div>
+          </div>
+          <div class="exp-company">Prodigy Agency · France</div>
+          <ul class="exp-bullets">
+            <li>Restructured the sales and partnerships function to support rapid growth</li>
+            <li>Defined commercial strategy, key account priorities and team organization</li>
+            <li>Supported scale from 10 to 30 employees in under 12 months</li>
+          </ul>
+          <span class="kpi-tag">10 → 30 employees in under 12 months</span>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Tournaments & Events</div>
+            <div class="exp-dates">2016 – 2020</div>
+          </div>
+          <div class="exp-company">Webedia · Paris</div>
+          <ul class="exp-bullets">
+            <li>Built and led a cross-functional department from scratch within a large media group</li>
+            <li>Developed tier-1 brand partnerships; grew contracts from 100K to 500K+ per account</li>
+            <li>Closed publisher deals: Nintendo, Ubisoft, EA, Activision/Blizzard, Riot Games</li>
+            <li>Produced large-scale international events across Europe and Latin America</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">COO</div>
+            <div class="exp-dates">2006 – 2016</div>
+          </div>
+          <div class="exp-company">Games Services / Oxent · Paris</div>
+          <ul class="exp-bullets">
+            <li>Joined a 2-person startup facing closure — led operational and commercial turnaround</li>
+            <li>Scaled the organization to 15 people across two business lines</li>
+            <li>Built partner ecosystem: SFR, Ubisoft, Activision, Samsung, Nintendo</li>
+            <li>Contributed to successful acquisition by Webedia group</li>
+          </ul>
+          <span class="kpi-tag">2 people → 15 · Successful exit</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
