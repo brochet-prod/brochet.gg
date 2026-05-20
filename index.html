@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julien Brochet — CRO Candidature · Goodvest</title>
+  <!--
+    
+    numbers/headings = Syne 800 (bold). Replace with licensed Montreal TS + Moneta Bold via @font-face.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #003938;
+      --beige:   #fdf3eb;
+      --white:   #ffffff;
+      --text:    #1d2525;
+      --btn:     #016f6c;
+      --orange:  #ef8f6c;
+      --border-d: rgba(255,255,255,.11);
+      --border-l: rgba(29,37,37,.13);
+      --border-w: rgba(29,37,37,.1);
+
+      /* name: elegant serif; numbers/h2: bold grotesque; body: clean sans */
+      
+      --f-bold:  'Merriweather', Georgia, serif;
+      --f-body:  'Instrument Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--f-body); color: var(--text); overflow-x: hidden; background: var(--beige); }
+
+    /* ── BUTTONS ──────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      background: var(--btn); color: var(--white);
+      font-family: var(--f-body); font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px;
+      border: 1.5px solid var(--btn);
+      transition: background .22s, transform .18s;
+    }
+    .btn:hover { background: #015a58; border-color: #015a58; transform: translateY(-2px); }
+
+    .btn-outline-d {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      background: transparent; color: var(--text);
+      font-family: var(--f-body); font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px;
+      border: 1.5px solid var(--text);
+      transition: background .22s, color .22s, transform .18s;
+    }
+    .btn-outline-d:hover { background: var(--text); color: var(--white); transform: translateY(-2px); }
+
+    .btn-outline-w {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      background: transparent; color: var(--white);
+      font-family: var(--f-body); font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px;
+      border: 1.5px solid rgba(255,255,255,.38);
+      transition: background .22s, border-color .22s, transform .18s;
+    }
+    .btn-outline-w:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.65); transform: translateY(-2px); }
+
+    /* ── SHARED ───────────────────────────────────────────────────────── */
+    section { padding: 100px 7vw; }
+
+    .section-tag {
+      font-family: var(--f-body);
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1.3rem;
+    }
+    .tag-dark { color: rgba(29,37,37,.5); }
+
+    h2 {
+      font-family: var(--f-bold);
+      font-size: clamp(2.3rem, 4.5vw, 4rem);
+      font-weight: 700; line-height: 1.06; letter-spacing: -.03em;
+    }
+    h2.on-dark  { color: var(--white); }
+    h2.on-light { color: var(--dark); }
+    h2.on-white { color: var(--text); }
+    h2 em { font-family: var(--f-bold); font-style: italic; font-weight: 400; letter-spacing: 0; }
+    .on-dark em  { color: rgba(255,230,208,.75); }
+    .on-light em { color: var(--dark); opacity: .55; }
+    .on-white em { color: var(--orange); }
+
+    .reveal {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── ① HERO — BEIGE ──────────────────────────────────────────────── */
+    .hero {
+      background: var(--beige);
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 7vw 9vh;
+      position: relative; overflow: hidden;
+    }
+
+    .hero-nav {
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 32px 7vw;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 2; animation: fadeIn .8s ease both;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 14px; }
+    .nav-brand .gv { font-family: var(--f-bold); font-size: .92rem; font-weight: 700; color: var(--dark); letter-spacing: .03em; }
+    .nav-brand .sep { width: 1px; height: 18px; background: var(--border-l); }
+    .nav-brand .sub { font-size: .73rem; font-weight: 400; color: rgba(29,37,37,.45); letter-spacing: .1em; }
+    .nav-cta {
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--btn); text-decoration: none;
+      border-bottom: 1px solid rgba(1,111,108,.35); padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-cta:hover { color: var(--dark); border-color: var(--dark); }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-eyebrow {
+      font-size: .7rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1.4rem;
+      animation: slideUp .9s cubic-bezier(.22,1,.36,1) .1s both;
+    }
+
+    /* THE NAME — Syne 800, large, dark green on beige */
+    .hero-name {
+      font-family: var(--f-bold);
+      font-size: clamp(5rem, 11vw, 11rem);
+      font-weight: 400; line-height: .88; letter-spacing: -.04em;
+      color: var(--dark);
+      animation: slideUp 1s cubic-bezier(.22,1,.36,1) .25s both;
+    }
+
+    .hero-divider {
+      width: 52px; height: 2px; background: var(--orange);
+      margin: 2.4rem 0;
+      animation: slideUp .8s cubic-bezier(.22,1,.36,1) .4s both;
+    }
+
+    .hero-sub {
+      max-width: 520px; font-size: .98rem; font-weight: 400;
+      color: rgba(29,37,37,.6); line-height: 1.82;
+      animation: slideUp .8s cubic-bezier(.22,1,.36,1) .5s both;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
+    .hero-actions {
+      margin-top: 2.8rem; display: flex; gap: 14px; flex-wrap: wrap;
+      animation: slideUp .8s cubic-bezier(.22,1,.36,1) .62s both;
+    }
+
+    /* ── ② STATS — DARK ──────────────────────────────────────────────── */
+    .stats {
+      background: var(--dark);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      padding: 0; /* no top/bottom padding — pure grid */
+    }
+    .stat {
+      padding: 60px 48px;
+      border-left: 1px solid var(--border-d);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .stat.visible { opacity: 1; transform: none; }
+    .stat:first-child { border-left: none; }
+
+    /* Numbers use Syne bold */
+    .stat-num {
+      font-family: var(--f-bold);
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      font-weight: 700; color: var(--white); line-height: 1; letter-spacing: -.03em;
+    }
+    .stat-label {
+      margin-top: 10px; font-size: .82rem; font-weight: 400;
+      color: var(--beige); line-height: 1.55;
+    }
+
+    /* ── ③ WHY GOODVEST — BEIGE ──────────────────────────────────────── */
+    .why {
+      background: var(--beige);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8vw; align-items: center;
+    }
+    .why-text p {
+      margin-top: 1.8rem; font-size: 1rem;
+      color: rgba(29,37,37,.65); line-height: 1.85;
+    }
+    .why-text p strong { color: var(--text); font-weight: 600; }
+
+    .why-card {
+      background: var(--dark); border-radius: 12px;
+      padding: 48px 44px;
+    }
+    .why-card .quote {
+      font-family: var(--f-bold);
+      font-size: 1.55rem; font-weight: 400; font-style: italic;
+      line-height: 1.5; color: var(--white); margin-bottom: 2rem;
+    }
+    .why-card .quote em { font-style: normal; font-weight: 700; color: var(--beige); }
+    .why-card-source {
+      font-size: .73rem; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.3);
+    }
+
+    /* ── ④ PROFILE — DARK ────────────────────────────────────────────── */
+    .profile {
+      background: var(--dark);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8vw; align-items: start;
+    }
+    .profile-intro {
+      margin-top: 1.8rem; font-size: 1rem;
+      color: rgba(255,255,255,.55); line-height: 1.9;
+    }
+    .profile-intro strong { color: var(--white); font-weight: 500; }
+    .skills-grid {
+      margin-top: 1.8rem; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .skill-chip {
+      padding: 13px 16px;
+      background: var(--btn);
+      border: 1px solid var(--btn);
+      border-radius: 6px; font-size: .83rem; font-weight: 500;
+      color: var(--white); line-height: 1.3;
+    }
+
+    /* ── ⑤ EXPERIENCE — WHITE ────────────────────────────────────────── */
+    .experience { background: var(--white); }
+
+    .exp-header { max-width: 520px; margin-bottom: 70px; }
+
+    .exp-item {
+      display: grid; grid-template-columns: 150px 1fr;
+      gap: 0 52px; padding: 44px 0;
+      border-top: 1px solid var(--border-w);
+      opacity: 0; transform: translateX(-10px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .exp-item.visible { opacity: 1; transform: none; }
+
+    .exp-dates {
+      font-family: var(--f-bold);
+      font-size: .95rem; font-weight: 400; font-style: italic;
+      color: rgba(29,37,37,.4); padding-top: 3px;
+    }
+    .exp-role { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .exp-company { font-size: .84rem; color: var(--orange); margin-top: 3px; }
+    .exp-desc { margin-top: 12px; font-size: .9rem; color: rgba(29,37,37,.6); line-height: 1.75; }
+    .exp-kpi {
+      display: inline-block; margin-top: 14px; padding: 5px 14px;
+      background: rgba(1,111,108,.08);
+      border: 1px solid rgba(1,111,108,.18);
+      border-radius: 20px; font-size: .76rem; font-weight: 600;
+      color: var(--btn); letter-spacing: .04em;
+    }
+
+    /* ── ⑥ ISR ANGLE — BEIGE ─────────────────────────────────────────── */
+    .invest {
+      background: var(--beige);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8vw; align-items: center;
+    }
+    .invest-text {
+      margin-top: 1.8rem; font-size: 1rem;
+      color: rgba(29,37,37,.65); line-height: 1.85;
+    }
+    .invest-text + .invest-text { margin-top: 1.2rem; }
+    .invest-text strong { color: var(--text); font-weight: 600; }
+    .pillars { display: flex; flex-direction: column; gap: 14px; }
+    .pillar {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 22px; background: var(--white);
+      border: 1px solid rgba(0,57,56,.12); border-radius: 10px;
+    }
+    .pillar-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .pillar-title { font-size: .87rem; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+    .pillar-body { font-size: .81rem; color: rgba(29,37,37,.6); line-height: 1.6; }
+
+    /* ── ⑦ CTA — DARK ────────────────────────────────────────────────── */
+    .cta-section {
+      background: var(--dark); text-align: center;
+      padding: 116px 7vw;
+    }
+    .cta-section p {
+      margin: 1.6rem auto 3rem; max-width: 460px;
+      font-size: .98rem; color: rgba(255,255,255,.5); line-height: 1.82;
+    }
+    .cta-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ── FOOTER ──────────────────────────────────────────────────────── */
+    footer {
+      background: var(--text); padding: 30px 7vw;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .footer-l { font-family: var(--f-bold); font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.55); }
+    .footer-r { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.28); }
+
+    /* ── ANIMATIONS ──────────────────────────────────────────────────── */
+    @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-left: none; border-top: 1px solid var(--border-d); }
+      .why, .profile, .invest { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 6px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .cta-links, .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ① HERO — BEIGE ─────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <nav class="hero-nav">
+      <div class="nav-brand">
+        <span class="gv">Goodvest</span>
+        <span class="sep"></span>
+        <span class="sub">CRO Candidature</span>
+      </div>
+      <a href="mailto:julien@brochet.gg" class="nav-cta">Contact →</a>
+    </nav>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Chief Revenue Officer · Open Application</p>
+      <h1 class="hero-name">Julien<br>BROCHET</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">
+        <strong>20 years turning complex situations into scalable results.</strong><br>
+        Partnerships, teams, revenue systems — each one designed before it could be driven. And a long-standing conviction that responsible investing is the future of finance.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:julien@brochet.gg" class="btn">Get in touch</a>
+        <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" class="btn-outline-d">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② STATS — DARK ──────────────────────────────────────────────────────── -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">+190%</div>
+      <div class="stat-label">Network revenue growth<br>in 2 years — EVA</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">20 yrs</div>
+      <div class="stat-label">Building &amp; scaling<br>commercial organizations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">×3</div>
+      <div class="stat-label">Headcount scaled<br>10 → 30 — Prodigy Agency</div>
+    </div>
+  </div>
+
+  <!-- ③ WHY GOODVEST — BEIGE ──────────────────────────────────────────────── -->
+  <section class="why">
+    <div class="why-text reveal">
+      <p class="section-tag">Why Goodvest</p>
+      <h2 class="on-light">The right challenge,<br><em>at the right moment</em></h2>
+      <p>
+        You are not looking for someone to manage what already exists. You need someone who can <strong>build the structures that make 2× or 3× growth repeatable</strong> — while keeping Sales and Marketing aligned under a single revenue vision.
+      </p>
+      <p>
+        That is exactly the type of mission I have been navigating throughout my career. Not as a manager inheriting a working system, but as someone who had to design the engine before driving it.
+      </p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:.15s">
+      <div class="quote">
+        "We are not looking for a manager of the existing — but someone capable of <em>structuring and accelerating.</em>"
+      </div>
+      <div class="why-card-source">Goodvest — CRO Job Description · 2026</div>
+    </div>
+  </section>
+
+  <!-- ④ PROFILE — DARK ───────────────────────────────────────────────────── -->
+  <section class="profile">
+    <div class="reveal">
+      <p class="section-tag">Profile</p>
+      <h2 class="on-dark">A builder at heart,<br><em>a strategist by trade</em></h2>
+      <p class="profile-intro">
+        20+ years driving revenue in fast-moving organizations. From structuring sales and partnerships to leading customer success at scale — always in environments where the rulebook didn't exist yet. Strong analytical mindset, hands-on execution, and the ability to hold both the strategic vision and the operational detail at the same time.
+      </p>
+    </div>
+    <div class="reveal" style="transition-delay:.15s">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+        <a href="coverletter_goodvest.html" target="_blank" style="font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(239,143,108,.4);padding-bottom:2px;white-space:nowrap;">Cover Letter →</a>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Revenue Strategy &amp; Growth</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Sales &amp; Partnerships</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Team Building</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>KPIs &amp; Playbooks</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Go-to-Market</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Building from 0 to 1</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Cross-functional Leadership</div>
+        <div class="skill-chip" style="display:flex;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Scaling Organizations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ EXPERIENCE — WHITE ───────────────────────────────────────────────── -->
+  <section class="experience">
+    <div class="exp-header reveal" style="display:flex;justify-content:space-between;align-items:flex-start;max-width:100%;">
+      <div>
+        <p class="section-tag">Experience</p>
+        <h2 class="on-white">Every role,<br><em>a different zero</em></h2>
+      </div>
+      <a href="cv_goodvest.html" target="_blank" style="font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(239,143,108,.4);padding-bottom:2px;white-space:nowrap;flex-shrink:0;">Curriculum Vitae →</a>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2023 – 2026</div>
+      <div>
+        <div class="exp-role">Head of Customer Success</div>
+        <div class="exp-company">EVA – Esports Virtual Arenas</div>
+        <div class="exp-desc">Created the CSM department from scratch across a 70+ franchisee network. Designed KPI frameworks, performance playbooks and review rhythms. Drove sustained revenue growth through structured performance management.</div>
+        <span class="exp-kpi">+190% network revenue in 2 years</span>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2020 – 2023</div>
+      <div>
+        <div class="exp-role">Strategic Advisor</div>
+        <div class="exp-company">Brochet Conseil (Independent)</div>
+        <div class="exp-desc">Advised growth-stage companies, investment funds and media groups on go-to-market strategy, partnerships, organizational structuring and performance improvement. Key clients: Red Bull, SportFive, Webedia Africa, Freaks4U / Riot Games.</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2021</div>
+      <div>
+        <div class="exp-role">Head of Strategy &amp; Partnerships</div>
+        <div class="exp-company">Prodigy Agency</div>
+        <div class="exp-desc">Restructured the sales and partnerships function to support rapid growth. Defined commercial strategy and key account priorities. Built the team structure and processes that enabled scale.</div>
+        <span class="exp-kpi">10 → 30 employees in under 12 months</span>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2016 – 2020</div>
+      <div>
+        <div class="exp-role">Head of Tournaments &amp; Events</div>
+        <div class="exp-company">Webedia</div>
+        <div class="exp-desc">Structured and led a cross-functional department within a large media group. Negotiated and grew tier-1 brand partnerships from 100K to 500K+ per account. Closed publisher deals with Nintendo, Ubisoft, EA, Activision/Blizzard, Riot Games.</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2006 – 2016</div>
+      <div>
+        <div class="exp-role">COO</div>
+        <div class="exp-company">Games Services / Oxent</div>
+        <div class="exp-desc">Joined a 2-person startup facing closure. Led operational and commercial turnaround in 18 months. Scaled the organization to 15 people. Built the partner ecosystem and contributed to a successful exit.</div>
+        <span class="exp-kpi">2 people → 15 · Successful exit</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ ISR / FINANCE — BEIGE ─────────────────────────────────────────────── -->
+  <section class="invest">
+    <div class="reveal">
+      <p class="section-tag">Why this matters to me</p>
+      <h2 class="on-light">Finance durable —<br><em>not a talking point</em></h2>
+      <p class="invest-text">
+        <strong>Sustainable finance and responsible investment are not abstract concepts for me.</strong> I have been actively managing my own portfolio with a strong ESG and responsible investing focus for years — assurance-vie, PER, sectoral allocation, impact measurement.
+      </p>
+      <p class="invest-text">
+        I understand the product logic behind Goodvest, the investor conviction it requires, and the growing demand for solutions that align performance with responsibility. Walking into a conversation about your offering, <strong>I am not starting from zero.</strong>
+      </p>
+    </div>
+    <div class="pillars reveal" style="transition-delay:.15s">
+      <div class="pillar">
+        <div class="pillar-icon">📊</div>
+        <div>
+          <div class="pillar-title">Personal investor, active for years</div>
+          <div class="pillar-body">PER, assurance-vie, ISR-focused allocation — I know your product from the inside.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌱</div>
+        <div>
+          <div class="pillar-title">Mission alignment</div>
+          <div class="pillar-body">I believe performance and responsibility are not in tension. That conviction is genuine, not a cover letter formula.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🎯</div>
+        <div>
+          <div class="pillar-title">Built for this stage</div>
+          <div class="pillar-body">You have a proven model and real growth. My career has been about scaling what works — without breaking it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ CONTACT + DOCS BANDS ────────────────────────────────────────────── -->
+  <div style="background:var(--dark);padding:32px 7vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+      <span style="font-family:var(--f-display);font-size:1rem;font-weight:700;color:var(--white);letter-spacing:.02em;">Julien Brochet</span>
+      <span style="width:1px;height:18px;background:rgba(255,255,255,.2);flex-shrink:0;"></span>
+      <a href="mailto:julien@brochet.gg" style="font-size:.85rem;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.75)'">julien@brochet.gg</a>
+      <span style="color:rgba(255,255,255,.2);">·</span>
+      <a href="tel:+33630932305" style="font-size:.85rem;color:rgba(255,255,255,.75);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.75)'">+33 6 30 93 23 05</a>
+      <span style="color:rgba(255,255,255,.2);">·</span>
+      <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" style="font-size:.85rem;color:rgba(255,255,255,.75);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.75)'">LinkedIn</a>
+    </div>
+    <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);">Paris (92) · Available now</span>
+  </div>
+
+  <div style="background:var(--btn);padding:22px 7vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+      <a href="cv_goodvest.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.4)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Curriculum Vitae
+      </a>
+      <span style="color:rgba(255,255,255,.3);">·</span>
+      <a href="coverletter_goodvest.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.4)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Cover Letter
+      </a>
+    </div>
+    <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);">CRO Candidature · Goodvest · May 2026</span>
+  </div>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 90);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .stat, .exp-item').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
