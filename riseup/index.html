@@ -302,14 +302,15 @@
 
     .matters-section {
       background: #fff6f0;
+      padding: 96px 7vw;
+    }
+    .matters-header { margin-bottom: 56px; }
+    .matters-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8vw;
-      align-items: center;
-      padding: 96px 7vw;
+      align-items: start;
     }
-    .matters-quote { order: 1; }
-    .matters-text  { order: 2; }
 
     .contact-band {
       display: flex;
@@ -322,9 +323,7 @@
     .contact-line2 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
     @media (max-width: 860px) {
-      .matters-section { grid-template-columns: 1fr; }
-      .matters-quote { order: 1; }
-      .matters-text { order: 2; }
+      .matters-cols { grid-template-columns: 1fr; }
       .contact-band { flex-direction: column; align-items: flex-start; gap: 6px; padding: 24px 7vw; }
       .contact-line2 { flex-wrap: wrap; }
     }
@@ -423,26 +422,30 @@
 
   <!-- ⑤b WHY THIS MATTERS -->
   <section class="matters-section">
-    <div class="reveal matters-quote">
-      <div style="background:var(--grad);border-radius:14px;padding:48px 44px;height:100%;">
-        <div style="font-family:var(--f-d);font-size:1.35rem;font-weight:400;line-height:1.6;color:#fff;margin-bottom:2rem;">
-          "Too often, companies react when skill gaps appear. We offer a <span style="font-weight:700;">proactive</span> approach."
-        </div>
-        <div style="font-size:.73rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);">Arnaud Blachon, CEO & Co-founder · Rise Up</div>
-      </div>
-    </div>
-    <div class="reveal matters-text">
+    <div class="matters-header reveal">
       <p class="section-tag">Why this matters to me</p>
       <h2 class="on-light">Making people better,<br><em>always the first question</em></h2>
-      <p style="margin-top:1.8rem;font-size:1rem;color:var(--muted);line-height:1.85;">
-        In every team I built, the first question wasn't "how do we hit the targets", it was <strong style="color:var(--dark);font-weight:600;">how do we make each person better.</strong> Not as a side project, but as the actual job.
-      </p>
-      <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
-        At EVA, every account review started with a development conversation before a performance one. At Prodigy, I structured the commercial team around coaching rhythms before sales processes.
-      </p>
-      <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
-        Rise Up is building the infrastructure for that conviction to scale. That's a product I'd be proud to represent.
-      </p>
+    </div>
+    <div class="matters-cols">
+      <div class="reveal">
+        <div style="background:var(--grad);border-radius:14px;padding:48px 44px;">
+          <div style="font-family:var(--f-d);font-size:1.35rem;font-weight:400;line-height:1.6;color:#fff;margin-bottom:2rem;">
+            "Too often, companies react when skill gaps appear. We offer a <span style="font-weight:700;">proactive</span> approach."
+          </div>
+          <div style="font-size:.73rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);">Arnaud Blachon, CEO & Co-founder · Rise Up</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s;">
+        <p style="font-size:1rem;color:var(--muted);line-height:1.85;">
+          In every team I built, the first question wasn't "how do we hit the targets", it was <strong style="color:var(--dark);font-weight:600;">how do we make each person better.</strong> Not as a side project, but as the actual job.
+        </p>
+        <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
+          At EVA, every account review started with a development conversation before a performance one. At Prodigy, I structured the commercial team around coaching rhythms before sales processes.
+        </p>
+        <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
+          Rise Up is building the infrastructure for that conviction to scale. That's a product I'd be proud to represent.
+        </p>
+      </div>
     </div>
   </section>
 
