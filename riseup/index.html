@@ -299,6 +299,25 @@
       .skills-grid { grid-template-columns: 1fr; }
       .hero-actions, .contact-items { flex-direction: column; align-items: flex-start; }
     }
+
+    .matters-section {
+      background: #fff6f0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: center;
+      padding: 96px 7vw;
+    }
+    .contact-links-wrap {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    @media (max-width: 860px) {
+      .matters-section { grid-template-columns: 1fr; }
+      .matters-card-wrap { order: -1; }
+      .contact-band { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .contact-items { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .contact-sep { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -479,13 +498,16 @@
     <div class="contact-items">
       <span class="contact-name">Julien Brochet</span>
       <span class="contact-sep"></span>
-      <a href="mailto:julien@brochet.gg" class="contact-link">julien@brochet.gg</a>
-      <span class="contact-dot">·</span>
-      <a href="https://wa.me/33630932305" class="contact-link">+33 6 30 93 23 05</a>
-      <span class="contact-dot">·</span>
-      <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" class="contact-link">LinkedIn</a>
+      <div class="contact-links-wrap">
+        <a href="mailto:julien@brochet.gg" class="contact-link">julien@brochet.gg</a>
+        <span class="contact-dot">·</span>
+        <a href="https://wa.me/33630932305" class="contact-link">+33 6 30 93 23 05</a>
+        <span class="contact-dot">·</span>
+        <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" class="contact-link">LinkedIn</a>
+        <span class="contact-dot">·</span>
+        <span class="contact-link" style="color:rgba(255,255,255,.5);">Paris (92)</span>
+      </div>
     </div>
-    <span class="contact-avail">Paris (92) · Available now</span>
   </div>
 
   <div class="docs-band">
