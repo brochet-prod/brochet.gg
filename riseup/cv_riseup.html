@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Julien Brochet · Rise Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --coral:  #ea6852;
+      --navy:   #363a71;
+      --light:  #fff6f0;
+      --white:  #ffffff;
+      --text:   #1a2332;
+      --muted:  #5a6a7e;
+      --grad:   linear-gradient(135deg, #E8714A 0%, #C4569A 50%, #8B5CC8 100%);
+      --f-d: 'Merriweather', Georgia, serif;
+      --f-b: 'Instrument Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none; }
+    }
+    body { font-family: var(--f-b); color: var(--text); background: var(--white); font-size: 9.5pt; line-height: 1.55; }
+
+    .print-hint {
+      background: var(--grad); color: white; text-align: center; padding: 10px;
+      font-family: var(--f-b); font-size: 11px; font-weight: 500; letter-spacing: .08em;
+    }
+    .print-hint button {
+      margin-left: 16px; padding: 4px 14px; background: white; color: var(--coral);
+      border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;
+    }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; display: flex; flex-direction: column; }
+
+    /* HEADER */
+    .header {
+      background: #ea6852;
+      padding: 26pt 28pt 20pt;
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .header-eyebrow {
+      font-family: var(--f-b); font-size: 6.5pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(255,255,255,.75); margin-bottom: 6pt;
+    }
+    .header-name {
+      font-family: var(--f-d); font-size: 26pt; font-weight: 900;
+      color: var(--white); line-height: 1; letter-spacing: -.02em;
+    }
+    .header-name .last { color: rgba(255,255,255,.75); }
+    .header-contact { text-align: right; font-size: 8pt; color: rgba(255,255,255,.8); line-height: 1.7; }
+    .header-contact a { color: rgba(255,255,255,.8); text-decoration: none; }
+
+    /* BODY */
+    .body { display: grid; grid-template-columns: 58mm 1fr; flex: 1; }
+
+    /* SIDEBAR */
+    .sidebar { background: #fff6f0; padding: 20pt 16pt; }
+    .sidebar-section { margin-bottom: 18pt; }
+    .sidebar-title {
+      font-family: var(--f-b); font-size: 6pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--coral);
+      margin-bottom: 8pt; padding-bottom: 4pt;
+      border-bottom: 1px solid rgba(234,104,82,.3);
+    }
+    .sidebar p { font-size: 8.5pt; color: var(--text); line-height: 1.6; margin-bottom: 3pt; }
+    .sidebar p strong { font-weight: 600; color: var(--navy); display: block; margin-bottom: 1pt; }
+
+    .skill-tag {
+      display: inline-flex; align-items: center;
+      padding: 3pt 7pt; background: #363a71;
+      border: 1px solid #363a71;
+      color: var(--white); border-radius: 3pt;
+      font-size: 7.5pt; font-weight: 500;
+      margin: 2pt 2pt 0 0; line-height: 1.5;
+    }
+
+    .highlight-box {
+      background: #363a71;
+      border: 1px solid #363a71;
+      border-radius: 6pt; padding: 10pt 12pt; margin-bottom: 8pt;
+    }
+    .highlight-num {
+      font-family: var(--f-d); font-size: 18pt; font-weight: 900;
+      color: var(--white); line-height: 1; letter-spacing: -.02em;
+    }
+    .highlight-label { font-size: 7pt; color: rgba(255,255,255,.6); margin-top: 2pt; line-height: 1.4; }
+
+    /* MAIN */
+    .main { padding: 20pt 22pt 20pt 18pt; }
+    .section { margin-bottom: 16pt; }
+    .section-title {
+      font-family: var(--f-b); font-size: 6.5pt; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--coral);
+      margin-bottom: 6pt; padding-bottom: 4pt;
+      border-bottom: 1.5px solid var(--coral);
+    }
+    .exp-item { margin-bottom: 11pt; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2pt; }
+    .exp-role { font-size: 9.5pt; font-weight: 600; color: var(--navy); }
+    .exp-dates { font-family: var(--f-d); font-size: 7.5pt; font-weight: 400; font-style: italic; color: var(--coral); white-space: nowrap; margin-left: 8pt; }
+    .exp-company { font-size: 8pt; color: var(--coral); font-weight: 500; margin-bottom: 4pt; }
+    .exp-bullets { padding-left: 10pt; }
+    .exp-bullets li {
+      font-size: 8.5pt; color: rgba(26,35,50,.8); line-height: 1.55;
+      margin-bottom: 2pt; list-style: none; position: relative;
+    }
+    .exp-bullets li::before { content: '–'; position: absolute; left: -9pt; color: var(--coral); }
+    .kpi-tag {
+      display: inline-block; margin-top: 4pt; padding: 2pt 7pt;
+      background: rgba(234,104,82,.1); border: 1px solid rgba(234,104,82,.25);
+      border-radius: 10pt; font-size: 7pt; font-weight: 600; color: var(--coral);
+    }
+    .profile-text { font-size: 9pt; color: rgba(26,35,50,.8); line-height: 1.7; }
+    .profile-text strong { color: var(--navy); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="print-hint no-print">
+  Pour générer le PDF : Fichier → Imprimer → Enregistrer en PDF (A4, sans marges)
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+<div class="page">
+  <div class="header">
+    <div>
+      <div class="header-eyebrow">Head of Account Management</div>
+      <div class="header-name">Julien <span class="last">BROCHET</span></div>
+    </div>
+    <div class="header-contact">
+      julien@brochet.gg<br>
+      <a href="https://wa.me/33630932305">+33 6 30 93 23 05</a><br>
+      Paris (92)<br>
+      <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank">linkedin.com/in/julien-brochet-75209291</a>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Key Achievements</div>
+        <div class="highlight-box">
+          <div class="highlight-num">+190%</div>
+          <div class="highlight-label">Network revenue growth in 2 years, EVA</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num">70+</div>
+          <div class="highlight-label">Accounts managed directly, EVA network</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num">×3</div>
+          <div class="highlight-label">Headcount scaled, 10 to 30, Prodigy Agency</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Core Skills</div>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Account Management</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Retention & NRR</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Upsell & Cross-sell</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Team Leadership</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>KPIs & Playbooks</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Portfolio Strategy</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Revenue Growth</span>
+        <span class="skill-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;flex-shrink:0"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Building from 0 to 1</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <p><strong>French</strong>Native</p>
+        <p><strong>English</strong>Fluent (C1)</p>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+        <p><strong>Master II — Project Management</strong>IIM, Institut Léonard de Vinci, Paris, 2002–2006</p>
+      </div>
+
+    </div>
+
+    <div class="main">
+
+      <div class="section">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          20+ years driving revenue in fast-moving organizations. From building CSM and account management functions from scratch to leading cross-functional teams at scale, always in environments where the rulebook didn't exist yet. <strong>Expert in designing the KPI frameworks, playbooks and review rhythms that turn account teams into growth engines.</strong> Strong at developing people and creating cultures of accountability and performance.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Customer Success</div>
+            <div class="exp-dates">2023 – 2026</div>
+          </div>
+          <div class="exp-company">EVA – Esports Virtual Arenas · Paris</div>
+          <ul class="exp-bullets">
+            <li>Created and led the CSM/AM department from scratch across a network of 70+ accounts</li>
+            <li>Designed KPI frameworks, account playbooks, performance reviews and upsell processes</li>
+            <li>Drove +190% network revenue growth in 2 years through structured account management</li>
+            <li>Built and developed the team, running weekly deal reviews and individual coaching sessions</li>
+            <li>Managed portfolio segmentation, prioritization and escalation on strategic accounts</li>
+          </ul>
+          <span class="kpi-tag">+190% network revenue · 70+ accounts · NRR-driven approach</span>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Strategic Advisor</div>
+            <div class="exp-dates">2020 – 2023</div>
+          </div>
+          <div class="exp-company">Brochet Conseil (Independent) · Paris</div>
+          <ul class="exp-bullets">
+            <li>Advised growth-stage companies and investment funds on commercial strategy and structuring</li>
+            <li>Focus: go-to-market, partnerships, organizational design, performance improvement</li>
+            <li>Key clients: Red Bull, SportFive, Webedia Africa, Freaks4U / Riot Games</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Strategy & Partnerships</div>
+            <div class="exp-dates">2021</div>
+          </div>
+          <div class="exp-company">Prodigy Agency · France</div>
+          <ul class="exp-bullets">
+            <li>Restructured the commercial function and defined key account strategy</li>
+            <li>Built team structure and processes to support rapid scale</li>
+            <li>Supported growth from 10 to 30 employees in under 12 months</li>
+          </ul>
+          <span class="kpi-tag">10 → 30 employees in under 12 months</span>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Tournaments & Events</div>
+            <div class="exp-dates">2016 – 2020</div>
+          </div>
+          <div class="exp-company">Webedia · Paris</div>
+          <ul class="exp-bullets">
+            <li>Structured and led a cross-functional department within a large media group</li>
+            <li>Grew key accounts from 100K to 500K+ per year through active account development</li>
+            <li>Negotiated and managed multi-year contracts with Nintendo, Ubisoft, EA, Activision, Riot</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">COO</div>
+            <div class="exp-dates">2006 – 2016</div>
+          </div>
+          <div class="exp-company">Games Services / Oxent · Paris</div>
+          <ul class="exp-bullets">
+            <li>Joined a startup of 2 people facing closure — led turnaround and scaled to 15 people</li>
+            <li>Built partner ecosystem and managed key accounts across Europe</li>
+            <li>Contributed to a successful exit</li>
+          </ul>
+          <span class="kpi-tag">2 people → 15 · Successful exit</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
