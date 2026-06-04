@@ -308,15 +308,25 @@
       align-items: center;
       padding: 96px 7vw;
     }
-    .contact-links-wrap {
-      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    .matters-quote { order: 1; }
+    .matters-text  { order: 2; }
+
+    .contact-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
     }
+    .contact-line1 { display: flex; align-items: center; }
+    .contact-line2 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
     @media (max-width: 860px) {
       .matters-section { grid-template-columns: 1fr; }
-      .matters-card-wrap { order: -1; }
-      .contact-band { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .contact-items { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .contact-sep { display: none; }
+      .matters-quote { order: 1; }
+      .matters-text { order: 2; }
+      .contact-band { flex-direction: column; align-items: flex-start; gap: 6px; padding: 24px 7vw; }
+      .contact-line2 { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -412,12 +422,20 @@
 
 
   <!-- ⑤b WHY THIS MATTERS -->
-  <section style="background:#fff6f0;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center;padding:96px 7vw;">
-    <div class="reveal">
+  <section class="matters-section">
+    <div class="reveal matters-quote">
+      <div style="background:var(--grad);border-radius:14px;padding:48px 44px;height:100%;">
+        <div style="font-family:var(--f-d);font-size:1.35rem;font-weight:400;line-height:1.6;color:#fff;margin-bottom:2rem;">
+          "Too often, companies react when skill gaps appear. We offer a <span style="font-weight:700;">proactive</span> approach."
+        </div>
+        <div style="font-size:.73rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);">Arnaud Blachon, CEO & Co-founder · Rise Up</div>
+      </div>
+    </div>
+    <div class="reveal matters-text">
       <p class="section-tag">Why this matters to me</p>
       <h2 class="on-light">Making people better,<br><em>always the first question</em></h2>
       <p style="margin-top:1.8rem;font-size:1rem;color:var(--muted);line-height:1.85;">
-        In every team I built, the first question wasn't "how do we hit the targets" — it was <strong style="color:var(--dark);font-weight:600;">how do we make each person better.</strong> Not as a side project, but as the actual job.
+        In every team I built, the first question wasn't "how do we hit the targets", it was <strong style="color:var(--dark);font-weight:600;">how do we make each person better.</strong> Not as a side project, but as the actual job.
       </p>
       <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
         At EVA, every account review started with a development conversation before a performance one. At Prodigy, I structured the commercial team around coaching rhythms before sales processes.
@@ -425,12 +443,6 @@
       <p style="margin-top:1.2rem;font-size:1rem;color:var(--muted);line-height:1.85;">
         Rise Up is building the infrastructure for that conviction to scale. That's a product I'd be proud to represent.
       </p>
-    </div>
-    <div class="reveal" style="transition-delay:.15s;background:var(--grad);border-radius:14px;padding:48px 44px;">
-      <div style="font-family:var(--f-display);font-size:1.35rem;font-weight:400;font-style:italic;line-height:1.6;color:#fff;margin-bottom:2rem;">
-        "Too often, companies react when skill gaps appear. We offer a <span style="font-style:normal;font-weight:700;">proactive</span> approach."
-      </div>
-      <div style="font-size:.73rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);">Arnaud Blachon, CEO & Co-founder · Rise Up</div>
     </div>
   </section>
 
@@ -495,18 +507,17 @@
 
   <!-- ⑥ CONTACT + DOCS BANDS -->
   <div class="contact-band">
-    <div class="contact-items">
+    <div class="contact-line1">
       <span class="contact-name">Julien Brochet</span>
-      <span class="contact-sep"></span>
-      <div class="contact-links-wrap">
-        <a href="mailto:julien@brochet.gg" class="contact-link">julien@brochet.gg</a>
-        <span class="contact-dot">·</span>
-        <a href="https://wa.me/33630932305" class="contact-link">+33 6 30 93 23 05</a>
-        <span class="contact-dot">·</span>
-        <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" class="contact-link">LinkedIn</a>
-        <span class="contact-dot">·</span>
-        <span class="contact-link" style="color:rgba(255,255,255,.5);">Paris (92)</span>
-      </div>
+      <span style="color:rgba(255,255,255,.3);margin:0 10px;">·</span>
+      <span style="font-size:.85rem;color:rgba(255,255,255,.6);">Paris (92)</span>
+    </div>
+    <div class="contact-line2">
+      <a href="mailto:julien@brochet.gg" class="contact-link">julien@brochet.gg</a>
+      <span class="contact-dot">·</span>
+      <a href="https://wa.me/33630932305" class="contact-link">+33 6 30 93 23 05</a>
+      <span class="contact-dot">·</span>
+      <a href="https://linkedin.com/in/julien-brochet-75209291" target="_blank" class="contact-link">LinkedIn</a>
     </div>
   </div>
 
