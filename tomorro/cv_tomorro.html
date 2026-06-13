@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Julien Brochet · Tomorro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800;900&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --dark:  #122314; --dark2: #193317; --dark3: #273f2b;
+      --green: #68ef3f; --muted: #b1b7a0; --light: #ffffff; --light2: #f2f5eb;
+      --f-d: 'Exo 2', system-ui, sans-serif;
+      --f-b: 'Instrument Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+    @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none; } }
+    body { font-family: var(--f-b); color: var(--dark3); background: var(--light); font-size: 9.5pt; line-height: 1.55; }
+
+    .print-hint { background: var(--green); color: var(--dark3); text-align: center; padding: 10px; font-family: var(--f-b); font-size: 11px; font-weight: 600; letter-spacing: .08em; }
+    .print-hint button { margin-left: 16px; padding: 4px 14px; background: var(--dark3); color: var(--green); border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px; }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; display: flex; flex-direction: column; }
+
+    /* HEADER */
+    .header { background: var(--dark); padding: 26pt 28pt 20pt; display: flex; justify-content: space-between; align-items: flex-end; }
+    .header-eyebrow { font-family: var(--f-b); font-size: 6.5pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin-bottom: 6pt; }
+    .header-name { font-family: var(--f-d); font-size: 26pt; font-weight: 900; color: var(--light); line-height: 1; letter-spacing: -.02em; }
+    .header-name .last { color: var(--green); }
+    .header-contact { text-align: right; font-size: 8pt; color: rgba(255,255,255,.75); line-height: 1.7; }
+    .header-contact a { color: rgba(255,255,255,.75); text-decoration: none; }
+
+    /* BODY */
+    .body { display: grid; grid-template-columns: 58mm 1fr; flex: 1; }
+
+    /* SIDEBAR */
+    .sidebar { background: var(--light2); padding: 20pt 16pt; }
+    .sidebar-section { margin-bottom: 18pt; }
+    .sidebar-title { font-family: var(--f-b); font-size: 6pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin-bottom: 8pt; padding-bottom: 4pt; border-bottom: 1px solid rgba(104,239,63,.3); }
+    .sidebar p { font-size: 8.5pt; color: var(--dark3); line-height: 1.6; margin-bottom: 3pt; }
+    .sidebar p strong { font-weight: 600; color: var(--dark); display: block; margin-bottom: 1pt; }
+
+    .skill-tag { display: inline-flex; align-items: center; padding: 3pt 7pt; background: var(--dark3); color: var(--light); border-radius: 3pt; font-size: 7.5pt; font-weight: 500; margin: 2pt 2pt 0 0; line-height: 1.5; }
+
+    .highlight-box { background: var(--dark); border-radius: 6pt; padding: 10pt 12pt; margin-bottom: 8pt; }
+    .highlight-num { font-family: var(--f-d); font-size: 18pt; font-weight: 900; color: var(--light); line-height: 1; }
+    .highlight-num .green { color: var(--green); }
+    .highlight-label { font-size: 7pt; color: var(--muted); margin-top: 2pt; line-height: 1.4; }
+
+    /* MAIN */
+    .main { padding: 20pt 22pt 20pt 18pt; }
+    .section { margin-bottom: 16pt; }
+    .section-title { font-family: var(--f-b); font-size: 6.5pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin-bottom: 6pt; padding-bottom: 4pt; border-bottom: 1.5px solid var(--green); }
+    .exp-item { margin-bottom: 11pt; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2pt; }
+    .exp-role { font-size: 9.5pt; font-weight: 600; color: var(--dark); }
+    .exp-dates { font-family: var(--f-d); font-size: 7.5pt; font-weight: 700; font-style: italic; color: var(--green); white-space: nowrap; margin-left: 8pt; }
+    .exp-company { font-size: 8pt; color: var(--dark3); opacity: .6; font-weight: 500; margin-bottom: 4pt; }
+    .exp-bullets { padding-left: 10pt; }
+    .exp-bullets li { font-size: 8.5pt; color: rgba(39,63,43,.8); line-height: 1.55; margin-bottom: 2pt; list-style: none; position: relative; }
+    .exp-bullets li::before { content: '–'; position: absolute; left: -9pt; color: var(--green); }
+    .kpi-tag { display: inline-block; margin-top: 4pt; padding: 2pt 7pt; background: rgba(104,239,63,.1); border: 1px solid rgba(104,239,63,.3); border-radius: 10pt; font-size: 7pt; font-weight: 600; color: var(--dark3); }
+    .profile-text { font-size: 9pt; color: rgba(39,63,43,.85); line-height: 1.7; }
+    .profile-text strong { color: var(--dark); font-weight: 600; }
+  </style>
+</head>
+<body>
+<div class="print-hint no-print">
+  Pour générer le PDF : Fichier → Imprimer → Enregistrer en PDF (A4, sans marges)
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+<div class="page">
+  <div class="header">
+    <div>
+      <div class="header-eyebrow">Team Lead CSM</div>
+      <div class="header-name">Julien <span class="last">BROCHET</span></div>
+    </div>
+    <div class="header-contact">
+      julien@brochet.gg<br>
+      <a href="https://wa.me/33630932305">+33 6 30 93 23 05</a><br>
+      Paris (92)<br>
+      <a href="https://linkedin.com/in/julien-brochet-75209291">linkedin.com/in/julien-brochet-75209291</a>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Key Achievements</div>
+        <div class="highlight-box">
+          <div class="highlight-num">+190%</div>
+          <div class="highlight-label">Network revenue growth in 2 years, EVA</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num">20 <span class="green">yrs</span></div>
+          <div class="highlight-label">Client-facing roles, across every position held</div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-num" style="font-size:14pt;">Exit</div>
+          <div class="highlight-label">Successful startup exit, Oxent → Webedia</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Core Skills</div>
+        <span class="skill-tag">Customer Success</span>
+        <span class="skill-tag">Team Coaching</span>
+        <span class="skill-tag">Retention & NRR</span>
+        <span class="skill-tag">Upsell & Expansion</span>
+        <span class="skill-tag">KPIs & Playbooks</span>
+        <span class="skill-tag">Building from 0 to 1</span>
+        <span class="skill-tag">Cross-functional</span>
+        <span class="skill-tag">AI-first mindset</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <p><strong>French</strong>Native</p>
+        <p><strong>English</strong>Fluent</p>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+        <p><strong>Master II — Project Management</strong>IIM, Institut Léonard de Vinci, Paris, 2002–2006</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          Customer success and client management have been the thread running through my entire career. I build the structures that make CSM teams perform — playbooks, review rhythms, KPI frameworks — and I develop the people who run them. At EVA, I created the CSM department from scratch and drove +190% revenue in 2 years across 70+ accounts. <strong>I've spent 20 years making people around me better. A team of 5 to 6 is exactly where I thrive.</strong>
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Customer Success</div>
+            <div class="exp-dates">2023 – 2026</div>
+          </div>
+          <div class="exp-company">EVA – Esports Virtual Arenas · Paris</div>
+          <ul class="exp-bullets">
+            <li>Created and led the CSM department from scratch across a network of 70+ accounts</li>
+            <li>Designed KPI frameworks, performance playbooks and weekly review rhythms</li>
+            <li>Drove +190% network revenue growth in 2 years through structured retention and upsell</li>
+            <li>Recruited and developed the CSM team; coached each member individually</li>
+            <li>Point of escalation on critical accounts; executive sponsor on strategic clients</li>
+          </ul>
+          <span class="kpi-tag">+190% network revenue · 70+ accounts · team built from scratch</span>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Strategic Advisor</div>
+            <div class="exp-dates">2020 – 2023</div>
+          </div>
+          <div class="exp-company">Brochet Conseil (Independent) · Paris</div>
+          <ul class="exp-bullets">
+            <li>Advised growth-stage companies, investment funds and media groups</li>
+            <li>Focus: go-to-market, partnerships, organizational structuring, performance improvement</li>
+            <li>Key clients: Red Bull, SportFive, Webedia Africa, Freaks4U, Riot Games</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Strategy & Partnerships</div>
+            <div class="exp-dates">2021</div>
+          </div>
+          <div class="exp-company">Prodigy Agency · France</div>
+          <ul class="exp-bullets">
+            <li>Restructured the commercial function to support rapid growth</li>
+            <li>Connected professional players with top brand partners</li>
+            <li>Supported scale from 10 to 30 employees in under 12 months</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Head of Tournaments & Events</div>
+            <div class="exp-dates">2016 – 2020</div>
+          </div>
+          <div class="exp-company">Webedia · Paris</div>
+          <ul class="exp-bullets">
+            <li>Structured and led a cross-functional department within a large media group</li>
+            <li>Grew tier-1 brand partnerships from 100K to 500K+ per account: Samsung, AXA, SFR, HP, CIC</li>
+            <li>Closed publisher deals: Nintendo, Ubisoft, EA, Activision/Blizzard, Riot Games</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">COO</div>
+            <div class="exp-dates">2006 – 2016</div>
+          </div>
+          <div class="exp-company">Games Services / Oxent · Paris</div>
+          <ul class="exp-bullets">
+            <li>Joined a startup of 2 people facing closure, led turnaround, scaled to 15 people</li>
+            <li>Built partner ecosystem and managed key accounts across Europe</li>
+            <li>Contributed to a successful exit to Webedia</li>
+          </ul>
+          <span class="kpi-tag">2 people → 15 · Successful exit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
